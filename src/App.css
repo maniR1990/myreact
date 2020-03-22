@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stars {
+  position: relative;
+  display:inline-block;
+  font-size: 18pt;
+  height: 1em;
+  line-height: 1em;
+  color: #6d655a;
+}
+
+.stars:before {	
+  content: "\2606\2606\2606\2606\2606";
+}
+
+.stars:after {	
+  content: "\2605\2605\2605\2605\2605";
+  position:absolute;
+  left:0;
+  overflow:hidden;
+  width:var(--w,50%);
+  color: rgb(255, 200, 0);
+  z-index:-1;
+}
+
+li {
+display: table;
+}
+
+.rating > span:hover:before {
+  content: "\2605";
+  position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}

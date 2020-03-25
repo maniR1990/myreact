@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -43,7 +49,7 @@
   font-size: 18pt;
   height: 1em;
   line-height: 1em;
-  color: #6d655a;
+  color: #6d655a;  
 }
 
 .stars:before {	
@@ -57,7 +63,7 @@
   overflow:hidden;
   width:var(--w,50%);
   color: rgb(255, 200, 0);
-  z-index:-1;
+  z-index:1;
 }
 
 li {
@@ -82,3 +88,13 @@ display: table;
    content: "\2605";
    position: absolute;
 }
+
+.thumb-nail{
+  border: 2px dashed #f4466e;
+    padding: 1em;
+    margin: 1em 0;
+    width:500px; 
+    background-color: ghostwhite;
+    text-align: left;
+}
+

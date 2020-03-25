@@ -1,14 +1,17 @@
 import React from 'react';
 import StarRating from './starRating';
-function Thumbnail() {
-    return (
-        <div>           
-            <StarRating rate={78} edit={true}/>
-            <StarRating rate={18}/>
-            <StarRating rate={28}/>
-            
-        </div>
-    )
-}
+
+const Thumbnail = React.memo(({ item, rating }) => {
+	return (
+		<section>
+			<div className='thumb-nail'>
+				<h3>{item.name}</h3>
+				<p>{item.description}</p>
+				<p>edit: {item.liked.toString()}</p>
+				<StarRating rate={item} edit={item.liked} callBack={rating} />
+			</div>
+		</section>
+	);
+});
 
 export default Thumbnail;

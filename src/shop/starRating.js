@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import  {NodeContext}  from './../AppContext';
 
-function StarRating({ rate, edit = true, callBack }) {
+function StarRating({ rate, edit = true }) {
+	const { rating } = React.useContext(NodeContext);
 
     const [ratingVal, updateRating] = useState(rate.rating*20);   
 	const editFlag = edit;
@@ -12,7 +14,7 @@ function StarRating({ rate, edit = true, callBack }) {
 			var inputvalue = Math.round(e.pageX - e.target.offsetLeft);
 			var val = Math.round((inputvalue * 100) / e.target.offsetWidth);
 			updateRating(val);
-			return callBack({...rate, rating:val});
+			return rating({...rate, rating:val});
 		}
 	};
 
